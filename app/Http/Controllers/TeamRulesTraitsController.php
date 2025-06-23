@@ -19,7 +19,7 @@ class TeamRulesTraitsController extends BaseController
         $regions = Region::all();
         $teamRules = TeamRule::with('descriptions')->get();
 
-        return Inertia::render('Web/TeamRules',
+        return Inertia::render('Web/Reference/TeamRules',
             [
                 'regions' => $regions,
                 'teamRules' => $teamRules,

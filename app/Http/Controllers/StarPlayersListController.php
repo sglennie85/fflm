@@ -27,7 +27,7 @@ class StarPlayersListController extends BaseController
             },
         ])->get();
 
-        return Inertia::render('Web/StarPlayers', [
+        return Inertia::render('Web/Reference/StarPlayers', [
             'starPlayers' => $starPlayers,
         ]);
     }

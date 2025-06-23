@@ -1,13 +1,6 @@
 <script setup>
 import AppLayout from '@/Layouts/AppLayout.vue';
-import Welcome from '@/Components/Welcome.vue';
-import UiInput from "@/UI/UiInput.vue";
-import UiInputGroup from "@/UI/UiInputGroup.vue";
-import UiTextArea from "@/UI/UiTextArea.vue";
-import UiPagination from "@/UI/UiPagination.vue";
-import UiTable from "@/UI/UiTable.vue";
-import {reactive, ref} from "vue";
-import {router} from "@inertiajs/vue3";
+import { reactive, ref } from "vue";
 
 const columns = reactive([
     {

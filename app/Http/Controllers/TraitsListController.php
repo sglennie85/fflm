@@ -17,7 +17,7 @@ class TraitsListController extends BaseController
     public function __invoke()
     {
         $traits = PlayerTrait::with(['descriptions'])->where('reference', '>=', 1)->orderBy('name')->get();
-        return Inertia::render('Web/PlayerTraits',
+        return Inertia::render('Web/Reference/PlayerTraits',
             [
                 'traits' => $traits,
             ]

@@ -32,7 +32,7 @@ class PlayersListController extends BaseController
             'players.primaries', 'players.secondaries'
             ])->get();
 
-        return Inertia::render('Web/Players', [
+        return Inertia::render('Web/Reference/Players', [
             'teams' => $teams,
         ]);
     }

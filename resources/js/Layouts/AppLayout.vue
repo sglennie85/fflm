@@ -1,6 +1,6 @@
 <script setup>
-import {ref} from 'vue';
-import {Head, Link, router} from '@inertiajs/vue3';
+import { ref } from 'vue';
+import {Head, Link, router, usePage } from '@inertiajs/vue3';
 import ApplicationMark from '@/Components/ApplicationMark.vue';
 import Banner from '@/Components/Banner.vue';
 import DropdownLink from '@/Components/DropdownLink.vue';
@@ -77,6 +77,9 @@ const navigation = [
 
 const sidebarOpen = ref(false)
 const sidebarType = ref(1)
+
+
+const { props: pageProps } = usePage();
 
 </script>
 
@@ -157,8 +160,9 @@ const sidebarType = ref(1)
     </TransitionRoot>
 
     <div
-        v-if="sidebarType === 1"
-        class="hidden lg:flex lg:flex-shrink-0 overflow-y-auto">
+      v-if="sidebarType === 1"
+      class="hidden lg:flex lg:flex-shrink-0 overflow-y-auto"
+    >
       <div class="flex flex-col">
         <!-- Sidebar component, swap this element with another sidebar if you like -->
         <div class="flex min-h-0 flex-1 flex-col border-r border-gray-200 bg-white">
@@ -251,7 +255,7 @@ const sidebarType = ref(1)
                 <!--                                    <img class="inline-block h-9 w-9 rounded-full" :src="user.imageUrl" alt="" />-->
                 <!--                                </div>-->
                 <div class="ml-3">
-                  <p class="text-sm font-medium text-gray-700 group-hover:text-gray-900">{{ user.name }}</p>
+                  <p class="text-sm font-medium text-gray-700 group-hover:text-gray-900">{{$page.props.auth.user.name}}</p>
                   <p class="text-xs font-medium text-gray-500 group-hover:text-gray-700">View profile</p>
                 </div>
               </div>
@@ -303,7 +307,7 @@ const sidebarType = ref(1)
                     <!--                                            <img class="h-8 w-8 rounded-full object-cover" :src="$page.props.user.profile_photo_url" :alt="$page.props.user.name">-->
                     <!--                                        </button>-->
                     <div class="flex items-center font-medium">
-                      {{ $page.props.user.name }}
+                      {{$page.props.auth.user.name}}
                       <ChevronDownIcon class="ml-2 -mr-0.5 h-4 w-4" />
                     </div>
                   </MenuButton>

@@ -18,7 +18,7 @@ class TeamsListController extends BaseController
 
        $teams = Team::with(['regions','rules'])->get();
 
-        return Inertia::render('Web/Teams',
+        return Inertia::render('Web/Reference/Teams',
             [
                 'teams' => $teams,
             ]

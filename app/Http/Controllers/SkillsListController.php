@@ -20,7 +20,7 @@ class SkillsListController extends BaseController
             $query->where('reference', '>', 0)->with('descriptions');
         }])->get();
 
-        return Inertia::render('Web/PlayerSkills',
+        return Inertia::render('Web/Reference/PlayerSkills',
             [
                 'categories' => $categories,
             ]
