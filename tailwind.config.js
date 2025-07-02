@@ -16,9 +16,9 @@ export default {
         extend: {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                gutcruncher: ['Gutcruncher', 'sans-serif'],
             },
         },
     },
-
     plugins: [forms, typography],
 };

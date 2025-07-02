@@ -68,4 +68,14 @@ class TeamRule extends Model
             'rule_id',
         );
     }
+
+    public function starPlayers(): BelongsToMany
+    {
+        return $this->BelongsToMany(
+            StarPlayer::class,
+            'star_player_team_rules',
+            'star_player_team_rule_id',
+            'star_player_id',
+        );
+    }
 }

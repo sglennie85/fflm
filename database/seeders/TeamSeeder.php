@@ -83,6 +83,9 @@ class TeamSeeder extends Seeder
             [
                 'name' => 'Vampire Lord',
             ],
+            [
+                'name' => 'Favoured of Hashut',
+            ],
         ];
 
         foreach ($rules as $insert) {
@@ -275,7 +278,7 @@ class TeamSeeder extends Seeder
                 'is_chaos' => true,
                 'big_choices' => true,
                 'regions' => [],
-                'rules' => [2, 3, 4, 5, 6],
+                'rules' => [2, 3, 4, 5, 6, 10],
             ],
             [
                 'name' => 'Chaos Dwarf',
@@ -288,7 +291,7 @@ class TeamSeeder extends Seeder
                 'is_chaos' => true,
                 'big_choices' => false,
                 'regions' => [1, 8],
-                'rules' => [2, 3, 4, 5, 6],
+                'rules' => [1, 10],
             ],
             [
                 'name' => 'Chaos Renegade',
@@ -301,7 +304,7 @@ class TeamSeeder extends Seeder
                 'is_chaos' => true,
                 'big_choices' => true,
                 'regions' => [],
-                'rules' => [2, 3, 4, 5, 6],
+                'rules' => [2, 3, 4, 5, 6, 10],
             ],
             [
                 'name' => 'Dark Elf',

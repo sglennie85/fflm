@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue';
-import {Head, Link, router, usePage } from '@inertiajs/vue3';
+import { Head, Link, router, usePage } from '@inertiajs/vue3';
 import ApplicationMark from '@/Components/ApplicationMark.vue';
 import Banner from '@/Components/Banner.vue';
 import DropdownLink from '@/Components/DropdownLink.vue';
@@ -16,6 +16,7 @@ import {
 } from '@headlessui/vue'
 import {
   AcademicCapIcon,
+  ArrowRightStartOnRectangleIcon,
   Bars3Icon,
   BellIcon,
   BookOpenIcon,
@@ -62,13 +63,19 @@ const user = {
       'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
 }
 const navigation = [
-  {name: 'Dashboard', route: 'web.dashboard', icon: HomeIcon, current: false},
-  {name: 'Players', route: 'web.players', icon: UserGroupIcon, current: false},
-  {name: 'Star Players', route: 'web.stars', icon: StarIcon, current: false},
-  {name: 'Teams', route: 'web.teams', icon: ListBulletIcon, current: false},
-  {name: 'Skills', route: 'web.skills', icon: AcademicCapIcon, current: false},
-  {name: 'Team Rules', route: 'web.team_rules', icon: BookOpenIcon, current: false},
-  {name: 'Traits', route: 'web.traits', icon: TagIcon, current: false},
+    { name: 'Dashboard', route: 'app.dashboard', icon: HomeIcon, current: false },
+    { name: 'Leagues', route: 'app.leagues.leagues', icon: ListBulletIcon, current: false },
+    { name: 'Reference', route: 'app.reference', icon: BookOpenIcon, current: false },
+    // { name: 'Settings', route: 'app.settings', icon: CogIcon, current: false },
+    // { name: 'Logout', route: 'app.settings', icon: ArrowRightStartOnRectangleIcon, current: false },
+
+
+    // { name: 'Players', route: 'web.players', icon: UserGroupIcon, current: false },
+    // { name: 'Star Players', route: 'web.stars', icon: StarIcon, current: false },
+    // { name: 'Teams', route: 'web.teams', icon: ListBulletIcon, current: false },
+    // { name: 'Skills', route: 'web.skills', icon: AcademicCapIcon, current: false },
+    // { name: 'Team Rules', route: 'web.team_rules', icon: BookOpenIcon, current: false },
+    // { name: 'Traits', route: 'web.traits', icon: TagIcon, current: false },
 ]
 // const secondaryNavigation = [
 //     { name: 'Apps', href: '#', icon: SquaresPlusIcon },
@@ -292,12 +299,12 @@ const { props: pageProps } = usePage();
 
               </nav>
               <div class="flex items-center space-x-6">
-                                <span class="inline-flex">
-                                    <a href="#" class="-mx-1 rounded-full bg-white p-1 text-gray-400 hover:text-gray-500">
-                                        <span class="sr-only">View notifications</span>
-                                        <BellIcon class="h-6 w-6" aria-hidden="true" />
-                                    </a>
-                                </span>
+<!--                <span class="inline-flex">-->
+<!--                    <a href="#" class="-mx-1 rounded-full bg-white p-1 text-gray-400 hover:text-gray-500">-->
+<!--                        <span class="sr-only">View notifications</span>-->
+<!--                        <BellIcon class="h-6 w-6" aria-hidden="true" />-->
+<!--                    </a>-->
+<!--                </span>-->
                 <Menu as="div" class="relative inline-block text-left">
                   <MenuButton class="flex rounded p-2 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2">
                     <!--                                        <span class="sr-only">Open user menu</span>-->

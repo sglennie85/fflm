@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Web\App\AppDashboardController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -29,11 +30,5 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
-    Route::get('/dashboard', App\Http\Controllers\DashboardController::class)->name('web.dashboard');
-    Route::get('/players', App\Http\Controllers\PlayersListController::class)->name('web.players');
-    Route::get( '/stars', \App\Http\Controllers\StarPlayersListController::class)->name('web.stars');
-    Route::get('/skills', App\Http\Controllers\SkillsListController::class)->name('web.skills');
-    Route::get('/teams', App\Http\Controllers\TeamsListController::class)->name('web.teams');
-    Route::get('/rules', App\Http\Controllers\TeamRulesTraitsController::class)->name('web.team_rules');
-    Route::get('/traits', App\Http\Controllers\TraitsListController::class)->name('web.traits');
+    Route::get('/dashboard', AppDashboardController::class)->name('app.dashboard');
 });

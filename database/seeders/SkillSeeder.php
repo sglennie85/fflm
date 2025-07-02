@@ -78,7 +78,7 @@ class SkillSeeder extends Seeder
                 'reference' => 2,
             ],
             [
-                'name' => 'Sidestep',
+                'name' => 'Side Step',
                 'skill_category_id' => 1,
                 'reference' => 2,
             ],

@@ -59,4 +59,15 @@ class Region extends Model
             'team_id',
         );
     }
+
+    public function starPlayers(): BelongsToMany
+    {
+        return $this->BelongsToMany(
+            StarPlayer::class,
+            'star_player_team_rules',
+            'star_player_regions',
+            'star_player_id',
+        );
+    }
+
 }

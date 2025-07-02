@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Web\App;
 
 use App\Models\Player;
 use App\Models\PlayerSkill;
@@ -12,7 +12,7 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
 use Inertia\Inertia;
 
-class DashboardController extends BaseController
+class AppDashboardController extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
@@ -23,7 +23,7 @@ class DashboardController extends BaseController
         $skills = PlayerSkill::where('reference', '>', 0)->count();
         $traits = PlayerTrait::where('reference', '>', 0)->count();
 
-        return Inertia::render('Dashboard',
+        return Inertia::render('Web/App/Dashboard',
             [
                 'players' => $players,
                 'teams' => $teams,

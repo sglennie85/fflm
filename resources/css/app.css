@@ -5,3 +5,10 @@
 [x-cloak] {
     display: none;
 }
+
+@font-face {
+    font-family: 'Gutcruncher';
+    src: url('/fonts/Gutcruncher.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}

@@ -31,6 +31,8 @@ class StarPlayer extends Model
         'cost',
         'special',
         'description',
+        'display',
+        'pair_key',
     ];
 
     /**
@@ -65,8 +67,8 @@ class StarPlayer extends Model
         return $this->belongsToMany(
             PlayerSkill::class,
             'star_player_skills',
-            'player_id',
-            'player_skill_id'
+            'star_player_id',
+            'star_player_skill_id'
         );
     }
 
@@ -75,8 +77,41 @@ class StarPlayer extends Model
         return $this->belongsToMany(
             PlayerTrait::class,
             'star_player_traits',
-            'player_id',
-            'player_trait_id'
+            'star_player_id',
+            'star_player_trait_id'
         );
     }
+
+    public function regions(): BelongsToMany
+    {
+        return $this->belongsToMany(
+            Region::class,
+            'star_player_regions',
+            'star_player_id',
+            'star_player_region_id'
+            );
+    }
+
+    public function rules(): BelongsToMany
+    {
+        return $this->belongsToMany
+        (TeamRule::class,
+            'star_player_team_rules',
+            'star_player_id',
+            'star_player_team_rule_id'
+        );
+    }
+
+    public function parent() : BelongsTo
+    {
+        return $this->belongsTo(self::class, 'pair_key', 'pair_key')
+            ->where('display', true);
+    }
+
+    public function pairedPlayers(): HasMany
+    {
+        return $this->hasMany(self::class, 'pair_key', 'pair_key')
+            ->where('display', false);
+    }
+
 }
